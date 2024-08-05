@@ -21,7 +21,9 @@ public class quotation {
             //파일에서 한 줄씩 읽어오기
             while ((line = reader.readLine()) != null) {
                 // 각 줄의 앞뒤 공백 제거 후 작은 따옴표 추가하여 결과에 추가
-                result.append("'").append(line.trim()).append("',\n");
+                if (!line.trim().isEmpty()) {
+                    result.append("'").append(line.trim()).append("',\n");
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
